@@ -1,0 +1,15 @@
+.container {
+    contain: content;
+    background-color: brown;
+    background-size: cover;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("../media/cachorros-bulldog-inglxs_crop1616112197114.jpeg_172596871.webp");}
+
+    .text {
+        font-family: "Noto Sans KR", sans-serif;
+        text-align: center;
+        margin: auto auto;
+      }
