@@ -8,8 +8,29 @@
     height: 100%;
     background-image: url("../media/cachorros-bulldog-inglxs_crop1616112197114.jpeg_172596871.webp");}
 
-    .text {
-        font-family: "Noto Sans KR", sans-serif;
-        text-align: center;
-        margin: auto auto;
-      }
+.text {
+    font-family: "Noto Sans KR", sans-serif;
+    text-align: center;
+    margin: auto auto;
+    }
+    
+.text h1 {
+  font-size: 65px;
+  color: rgb(229, 225, 225);
+  }
+    
+.text button {
+  padding: 20px;
+  font-size: 50px;
+  border: transparent;
+  border-radius: 20px;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+        rgb(199, 136, 187) 0%,
+        rgb(192, 126, 181) 90%
+  );
+  color: white;
+  text-align: center;
+  font-family: "Aref Ruqaa Ink", serif;
+  cursor: pointer;
+}
