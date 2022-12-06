@@ -34,7 +34,7 @@ const CreateDog = () => {
 
   const handleSeletChange = (e) => {
     //para que no me agregue 2 veces el temperamento
-    if (!input.temperaments.includes(e.target.value))
+    
       setInput({
         ...input,
         temperaments: [...input.temperaments, e.target.value],

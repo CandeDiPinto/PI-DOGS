@@ -11,6 +11,7 @@ const { getDogsApi } = require("../controllers/dogController.js"); //m: traigo l
 
 const getTemperaments = async () => {
   //traigo el array de la api [ {}, {}, {}]
+
   const dogsApiT = await getDogsApi();
   //crear nuevoArray vacio[]
   let nuevoArray = [];
@@ -32,6 +33,7 @@ const getTemperaments = async () => {
         arrayTemps.push(elementoSplit[i]);
       }
     }
+
   });
   //console.log(arrayTemps);
   //elimino los duplicados mediante un Set
@@ -43,6 +45,8 @@ const getTemperaments = async () => {
 //_______________RUTA_______________________________
 
 router.get("/", async (req, res) => {
+  const temp = await Temperament.findAll()
+if (!temp.length) {
   const dogsTemperaments = await getTemperaments();
   //tengo que esperar a que se resuelvan todas las promesas
 
@@ -53,6 +57,8 @@ router.get("/", async (req, res) => {
   );
   const tempsCreated = await Temperament.findAll();
   return res.send(tempsCreated);
+}
+return res.send(temp)
   //else return res.status(404).send("nada");
 });
 

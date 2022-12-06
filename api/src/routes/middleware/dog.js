@@ -45,8 +45,14 @@ router.get("/", async (req, res) => {
       life_span,
       image,
       temperament,
-    } = req.body;
+    } = req.body; 
+    
     try {
+      const temperamentos = await Temperament.findAll ({
+        where : {name: temperament}
+
+      })
+    
       let newDog = await Dog.create({
         name,
         height_min,
@@ -56,16 +62,27 @@ router.get("/", async (req, res) => {
         life_span,
         image,
       });
-      temperament.split(", ").map(async (el) => {
-        const findTemp = await Temperament.findOne({
-          where: { name: el },
-        });
-        const f = await newDog.addTemperament(findTemp);
-        console.log(f);
-      });
+      newDog.addTemperaments(temperamentos)
+
+      // temperament.map(async (el) => {
+      //   const findTemp = await Temperament.findOne({
+      //     where: { name: el },
+      //   });
+      //   const f = await newDog.addTemperament(findTemp);
+      //   // console.log(f);
+      // });
+
+      const prueba = await Dog.findOne ({
+        where : {name: name}, include: {
+          model: Temperament,
+          attributes: ["name"],
+          through: {attributes : []}
+      }
+      })
+      console.log("este es prueba", prueba)
       res.status(200).send(newDog);
-    } catch {
-      res.status(400).send("errorcito");
+    } catch (error) {
+      res.status(400).send(error.message);
     }
   });
 

@@ -49,7 +49,7 @@ const getDogsDb = async function () {
       name: dog.name,
       temperament: tempsString.join(", "),
       weight_min: dog.weight_min,
-      weight_min: dog.weight_max,
+      weight_max: dog.weight_max,
       image: dog.image,
       life_span: dog.life_span,
       height_min: dog.height_min,
