@@ -94,7 +94,10 @@ export default function Home() {
     dispatch(filterDogsByTemperaments(e.target.value));
     setCurrentPage(1);
   }
-
+  const handleRefresh =() => {
+    dispatch(getAllDogs())
+    setCurrentPage(1)
+  }
   return (
     <div>
       <div className="titulos">DOG LOVERS</div>
@@ -106,6 +109,7 @@ export default function Home() {
             </button>
           </Link>
           <Search currentPage={() => setCurrentPage(1)} />
+          <button onClick={()=>handleRefresh() }> Refresh </button>
           <div>
             <select
               defaultValue="ord"

@@ -16,7 +16,6 @@ const CreateDog = () => {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
   const history = useHistory();
-
   const [input, setInput] = useState({
     name: "",
     height_min: "",
@@ -25,19 +24,19 @@ const CreateDog = () => {
     weight_max: "",
     life_span: "",
     image: "",
-    temperaments: [],
+    temperament: [],
   });
+  console.log(input)
 
   useEffect(() => {
     dispatch(getTemperaments());
   }, [dispatch]);
 
   const handleSeletChange = (e) => {
-    //para que no me agregue 2 veces el temperamento
-    
+    //para hacer la seleccion de temperamentos    
       setInput({
         ...input,
-        temperaments: [...input.temperaments, e.target.value],
+        temperament: [...input.temperament, e.target.value],
       });
   };
 
@@ -67,7 +66,7 @@ const CreateDog = () => {
     ) {
       e.preventDefault();
       return alert("Complete the mandatory data to continue");
-    } else if (!input.temperaments.length) {
+    } else if (!input.temperament.length) {
       e.preventDefault();
       return alert("Temperament required");
     } else {
@@ -83,7 +82,7 @@ const CreateDog = () => {
         weight_max: "",
         life_span: "",
         image: "",
-        temperaments: [],
+        temperament: [],
       });
       // } else {
       //   alert("Complete the form");
@@ -224,7 +223,7 @@ const CreateDog = () => {
             ))}
           </select>
           <div className="temps-list-container">
-            {input.temperaments.map((el) => (
+            {input.temperament.map((el) => (
               <div className="temp-item" key={el}>
                 {el}
               </div>

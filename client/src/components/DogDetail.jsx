@@ -10,7 +10,7 @@ export default function DetailDog() {
   const dispatch = useDispatch();
   const detallePerro = useSelector((state) => state.dogDetail);
   const { id } = useParams();
-
+  console.log(detallePerro)
   //m: me traigo del state, me llena el state con el detalle del perro
   useEffect(() => {
     dispatch(getDogDetail(id));
@@ -32,7 +32,7 @@ export default function DetailDog() {
             -Temperament: {/* {detallePerro[0].temperament} */}
             {!detallePerro[0].createdInDb
               ? detallePerro[0].temperament
-              : detallePerro[0].temperaments.map((d) => d.name + " ")}
+              : detallePerro[0].temperament.map((d) => d.name + " ")}
           </p>
           <p className="card-text">-weight_min: {detallePerro[0].weight_min}</p>
           <p className="card-text">-weight_max: {detallePerro[0].weight_max}</p>
