@@ -26,10 +26,10 @@
   border-radius: 20px;
   background-image: radial-gradient(
     circle farthest-corner at 10% 20%,
-        rgb(199, 136, 187) 0%,
-        rgb(192, 126, 181) 90%
+        white(199, 136, 187) 0%,
+        white(192, 126, 181) 90%
   );
-  color: white;
+  color: #68A7AD;
   text-align: center;
   font-family: "Aref Ruqaa Ink", serif;
   cursor: pointer;

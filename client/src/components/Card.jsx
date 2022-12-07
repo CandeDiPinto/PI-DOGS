@@ -13,7 +13,7 @@ export default function Card({
       <div className="card">
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
-          <img src={image} alt="img not found" width="200px" height="200px" />
+          <img className= "card-image" src={image} alt="img not found" />
           {/* <p className="card-image">Image: {image}</p> */}
           <p className="card-text">Temperament: {temperament}</p>
           <br></br>

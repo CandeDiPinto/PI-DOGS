@@ -109,7 +109,7 @@ export default function Home() {
             </button>
           </Link>
           <Search currentPage={() => setCurrentPage(1)} />
-          <button onClick={()=>handleRefresh() }> Refresh </button>
+          <button className="botonBuscador" type ="submit" onClick={()=>handleRefresh() }> Refresh </button>
           <div>
             <select
               defaultValue="ord"
