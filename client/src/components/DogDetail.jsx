@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDogDetail } from "../redux/actions/index.js";
+import { cleanDetail, getDogDetail } from "../redux/actions/index.js";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import styles from "./Styles.css";
@@ -14,7 +14,9 @@ export default function DetailDog() {
   //m: me traigo del state, me llena el state con el detalle del perro
   useEffect(() => {
     dispatch(getDogDetail(id));
-  }, [id]);
+    return() => {dispatch(cleanDetail())}
+  }, [id, dispatch]);
+
 
   return (
     <div className="DetailDog">

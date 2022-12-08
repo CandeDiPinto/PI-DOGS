@@ -161,7 +161,8 @@ const CreateDog = () => {
 
           <label className="label">height_min: </label>
           <input
-            type="text"
+            type="number"
+            min="0"
             name="height_min"
             onChange={handleChange}
             value={input.height_min}
@@ -170,7 +171,8 @@ const CreateDog = () => {
 
           <label className="label">height_max: </label>
           <input
-            type="text"
+            type="number"
+            min="0"
             name="height_max"
             onChange={handleChange}
             value={input.height_max}
@@ -179,7 +181,8 @@ const CreateDog = () => {
 
           <label className="label">weight_min: </label>
           <input
-            type="text"
+            type="number"
+            min="0"
             name="weight_min"
             onChange={handleChange}
             value={input.weight_min}
@@ -188,7 +191,8 @@ const CreateDog = () => {
 
           <label className="label">weight_max: </label>
           <input
-            type="text"
+            type="number"
+            min="0"
             name="weight_max"
             onChange={handleChange}
             value={input.weight_max}

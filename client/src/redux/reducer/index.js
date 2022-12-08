@@ -19,6 +19,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         dogDetail: action.payload, //en el estado de dogDetail, manda todo lo que llegue del llamado a la función
       };
+    
+    case "CLEAN_DETAIL":
+      return {
+        ...state,
+        dogDetail: {},
+      } 
     case "CREATE_DOG":
       return {
         ...state,

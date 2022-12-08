@@ -7,7 +7,7 @@ const GET_TEMPERAMENTS = "GET_TEMPERAMENTS";
 const FILTER_BY_CREATED = "FILTER_BY_CREATED";
 const FILTER_BY_TEMPERAMENT = "FILTER_BY_TEMPERAMENT";
 const FILTER_DOG_BY_WEIGHT = "FILTER_DOG_BY_WEIGHT";
-
+const CLEAN_DETAIL = "CLEAN_DETAIL";
 
 export const getAllDogs = () => {
     return async function (dispatch) {
@@ -30,6 +30,10 @@ export const getDogDetail = (id) => {
       });
   };
 };
+
+export const cleanDetail = () => {
+  return { type: CLEAN_DETAIL }
+}
 
 let id;
 
