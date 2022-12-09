@@ -84,14 +84,14 @@ export const filterDogsByTemperaments = (payload) => {
 
 export function handlesortName(payload) {
   return {
-    type: "FILTER_DOG_BY_NAME",
+    type: FILTER_DOG_BY_NAME,
     payload,
   };
 }
 
 export function handleSortWeight(payload) {
   return {
-    type: "FILTER_DOG_BY_WEIGHT",
+    type: FILTER_DOG_BY_WEIGHT,
     payload,
   };
 }

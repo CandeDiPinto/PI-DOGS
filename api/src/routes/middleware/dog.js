@@ -64,14 +64,6 @@ router.get("/", async (req, res) => {
       });
       newDog.addTemperaments(temperamentos)
 
-      // temperament.map(async (el) => {
-      //   const findTemp = await Temperament.findOne({
-      //     where: { name: el },
-      //   });
-      //   const f = await newDog.addTemperament(findTemp);
-      //   // console.log(f);
-      // });
-
       const prueba = await Dog.findOne ({
         where : {name: name}, include: {
           model: Temperament,

@@ -42,8 +42,7 @@ const getDogsDb = async function () {
     dog.temperaments?.map((temp) => {
       tempsString.push(temp.name);
     });
-    // console.log("temperamentos");
-    // console.log(tempsString);
+    
     return {
       id: dog.id,
       name: dog.name,

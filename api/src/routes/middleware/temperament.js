@@ -1,7 +1,7 @@
-const { Router } = require("express"); //m: traemos Router de express
-const router = Router(); //m: creamos una instancia de Router
-const { Temperament } = require("../../db"); //m: traemos los modelos
-const { getDogsApi } = require("../controllers/dogController.js"); //m: traigo las fuciones para usarlas
+const { Router } = require("express"); 
+const router = Router(); 
+const { Temperament } = require("../../db"); 
+const { getDogsApi } = require("../controllers/dogController.js"); 
 
 //__________RUTAS_____________//
 
@@ -27,15 +27,13 @@ const getTemperaments = async () => {
   nuevoArray.forEach((element) => {
     if (element) {
       let elementoSplit = element.split(", ");
-      // console.log("TEMPERAMENTOS");
-      // console.log(elementoSplit);
       for (let i = 0; i < elementoSplit.length; i++) {
         arrayTemps.push(elementoSplit[i]);
       }
     }
 
   });
-  //console.log(arrayTemps);
+
   //elimino los duplicados mediante un Set
   const setTemps = new Set(arrayTemps);
   const setResult = [...setTemps];

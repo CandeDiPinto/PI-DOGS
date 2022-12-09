@@ -33,8 +33,8 @@ const CreateDog = () => {
   }, [dispatch]);
 
   const handleSeletChange = (e) => {
-    //para hacer la seleccion de temperamentos    
-      setInput({
+    //para hacer la seleccion de temperamentos     
+    setInput({
         ...input,
         temperament: [...input.temperament, e.target.value],
       });
@@ -70,8 +70,6 @@ const CreateDog = () => {
       e.preventDefault();
       return alert("Temperament required");
     } else {
-      // if (input.length > 0) {
-      //e.preventDefault();
       dispatch(createDog(input));
       alert("Dog Created");
       setInput({
